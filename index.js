@@ -13,12 +13,12 @@ conexionBD();
 // Middleware para manejar el cuerpo de las solicitudes en formato JSON
 app.use(express.json());
 
+// Middleware para manejar errores
+app.use(errorHandler);
+
 // Rutas
 app.use(topTracksRouter);
 app.use(songsRouter);
-
-// Middleware para manejar errores
-app.use(errorHandler);
 
 // Iniciar el servidor
 app.listen(port, () => {
