@@ -3,7 +3,7 @@ const Song = require('./models/Song');
 
 const router = express.Router();
 
-// CRUD: Crear una nueva canción
+
 router.post('/songs', async (req, res, next) => {
     try {
         const { name, artists } = req.body;
@@ -15,7 +15,7 @@ router.post('/songs', async (req, res, next) => {
     }
 });
 
-// CRUD: Leer todas las canciones
+
 router.get('/songs', async (req, res, next) => {
     try {
         const songs = await Song.find();
@@ -25,7 +25,7 @@ router.get('/songs', async (req, res, next) => {
     }
 });
 
-// CRUD: Actualizar una canción por su ID
+
 router.put('/songs/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
@@ -37,7 +37,7 @@ router.put('/songs/:id', async (req, res, next) => {
     }
 });
 
-// CRUD: Borrar una canción por su ID
+
 router.delete('/songs/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
